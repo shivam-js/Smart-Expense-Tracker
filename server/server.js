@@ -15,8 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "http://localhost:4173",
-      "https://smart-expense-tracker.netlify.app",
+      "https://smart-expense-trackee.netlify.app",
     ],
     credentials: true,
   })
