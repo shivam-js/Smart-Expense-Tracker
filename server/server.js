@@ -15,7 +15,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://smart-expense-tracker-theta-coral.vercel.app",
+      "http://localhost:4173",
+      "https://smart-expense-tracker.netlify.app",
     ],
     credentials: true,
   })
