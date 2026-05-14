@@ -6,7 +6,7 @@
 
 ## 🌐 Live Demo
 
-👉 https://smart-expense-tracker-theta-coral.vercel.app/
+👉 https://smart-expense-trackee.netlify.app/
 
 ---
 
@@ -44,20 +44,21 @@ This application provides a **centralized platform** to:
 
 **Deployment**
 
-* Vercel (Frontend)
-* Render (Backend)
+* Netlify (Frontend)
+* Railway (Backend)
 
 ---
 
 ## ✨ Key Features
 
-* 🔐 Secure Login & Signup (JWT Authentication)
-* 📊 Add, Edit, Delete Expenses
-* 🔍 Search & Filter by Category / Date
-* 📱 Fully Responsive (Mobile + Desktop)
-* ⚡ Real-time UI updates
-* 🌙 Clean and modern user interface
-
+* Secure JWT Authentication
+* User-specific expense management
+* Expense filtering and searching
+* Dark mode support
+* Responsive dashboard UI
+* Full CRUD operations
+* Protected routes
+* Cloud deployment
 ---
 
 ## 🖼️ Screenshots
@@ -128,8 +129,10 @@ smart-expense-tracker/
 
 ---
 
-## 🙌 Author
+👨‍💻 Author
 
-**Shivam Prasad**
+Shivam Prasad
+
+Final Year Developer passionate about Full Stack Development, AI Systems, and Modern Web Applications.
 
 If you like this project, ⭐ the repo!
