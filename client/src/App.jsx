@@ -261,14 +261,38 @@ function App() {
   };
 
   const displayedExpenses = useMemo(() => {
-    const filteredBySearch = expenses.filter((expense) =>
-      expense.title.toLowerCase().includes(searchTerm.toLowerCase().trim())
-    );
+  const searchValue = searchTerm.toLowerCase().trim();
 
-    return filteredBySearch.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  const filtered = expenses.filter((expense) => {
+    const matchesSearch = expense.title
+      .toLowerCase()
+      .includes(searchValue);
+
+    const matchesCategory =
+      !filters.category || expense.category === filters.category;
+
+    const expenseDate = expense.date ? new Date(expense.date) : null;
+
+    const matchesStartDate =
+      !filters.startDate ||
+      (expenseDate && expenseDate >= new Date(filters.startDate));
+
+    const matchesEndDate =
+      !filters.endDate ||
+      (expenseDate && expenseDate <= new Date(filters.endDate));
+
+    return (
+      matchesSearch &&
+      matchesCategory &&
+      matchesStartDate &&
+      matchesEndDate
     );
-  }, [expenses, searchTerm]);
+  });
+
+  return filtered.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}, [expenses, searchTerm, filters]);
 
   const formatExpenseDate = (dateValue) => {
     if (!dateValue) return "No date";
@@ -385,17 +409,21 @@ function App() {
                 <label className="field-label">Category</label>
                 <select
                   name="category"
-                  value={formData.category}
-                  onChange={handleChange}
+                  value={filters.category}
+                  onChange={handleFilterChange}
                   className="form-control"
                 >
-                  <option value="">Select Categories</option>
-
-                  {categoryOptions.map((category) => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
+                  <option value="">ALL Categories</option>
+                  <option value="Food">Food</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Groceries">Groceries</option>
+                  <option value="Health">Health</option>
+                  <option value="Bills">Bills</option>
+                  <option value="Salary">Salary</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
