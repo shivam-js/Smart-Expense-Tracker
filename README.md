@@ -1,6 +1,6 @@
 # 💸 Smart Expense Tracker
 
-🚀 A full-stack MERN application to track, manage, and analyze personal expenses with secure authentication and a clean responsive UI.
+🚀 Full-stack MERN Expense Tracker with JWT authentication, REST APIs, MongoDB integration, analytics dashboard, expense categorization, and responsive modern UI.
 
 ---
 
